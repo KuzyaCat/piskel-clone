@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <title>Simple Piskel Clone</title>
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="header--title">Simple Piskel Clone</h1>
+        <button id="export--gif">Export as .gif</button>
+    </header>
+    <main>
+        <div class="wrapper">
+            <div class="palletes">
+                <div class="action_pallete">
+                    <ul>
+                        <li id="bucket" class="tool">
+                            <img src="./images/icon-paint-bucket.svg" alt="Paint bucket">
+                            <span>Paint bucket</span>
+                        </li>
+                        <li id="pipette" class="tool">
+                            <img src="/images/icon-choose-color.svg" alt="Choose color">
+                            <span>Choose color</span>
+                        </li>
+                        <li id="pencil" class="tool">
+                            <img src="images/pencil.svg" alt="Pencil">
+                            <span>Pencil</span>
+                        </li>
+                        <li>
+                            <img src="images/ruler-solid.svg" alt="Stroke">
+                            <span>Stroke</span>
+                        </li>
+                        <li id="eraser" class="tool">
+                            <img src="./images/eraser-solid.svg" alt="Eraser">
+                            <span>Eraser</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="pen_size">
+                    <span>Pen size:</span>
+                    <ul>
+                        <li class="pen_size--item" data-size="1">1 unit</li>
+                        <li class="pen_size--item" data-size="2">2 units</li>
+                        <li class="pen_size--item" data-size="3">3 units</li>
+                        <li class="pen_size--item" data-size="4">4 units</li>
+                    </ul>
+                </div>
+                <div class="color_pallete">
+                    <ul>
+                        <li>
+                            <input type="color" value="#C4C4C4" id="color-current" class="color_pallete--color_item">
+                            <span>Current color</span>
+                        </li>
+                        <li>
+                            <input type="color" value="#000000" id="color-prev" class="color_pallete--color_item" disabled>
+                            <span>Prev color</span>
+                        </li>
+                    </ul>
+                </div>
+                <button id="shortcuts_btn">Shortcuts</button>
+            </div>
+            <div class="frames">
+                <div class="frames--controls">
+                </div>
+                <div class="frames--list">
+                    <canvas class="frames--item current_frame" width="128" height="128" draggable="true"></canvas></div>
+                <div class="frames--add">
+                    <span class="frames--add--plus">+</span>
+                    <span class="frames--add--text">Add new frame</span>
+                </div>
+            </div>
+            <canvas id="canvas"></canvas>
+            <div class="right_panel">
+                <canvas id="preview" width="128" height="128"></canvas>
+                <input id="fps" type="range" min="1" max="24" step="1">
+                <button id="fullscreen">Fullscreen</button>
+                <span class="fps_value"></span>
+                <div class="funcs_pallete">
+                    <ul>
+                        <li id="size-big" class="funcs_pallete--item">
+                            <span>32x32</span>
+                        </li>
+                        <li id="size-medium" class="funcs_pallete--item">
+                            <span>64x64</span>
+                        </li>
+                        <li id="size-small" class="funcs_pallete--item">
+                            <span>128x128</span>
+                        </li>
+                        <li id="clear" class="funcs_pallete--item">
+                            <span>Clear canvas</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="shortcuts">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="shortcuts--settings">
+                    <div class="shortcuts--settings-left">
+                        <div class="shortcuts--settings--item">
+                            <button id="paint_bucket_sc">b</button>
+                            <span>Paint bucket</span>
+                        </div>
+                        <div class="shortcuts--settings--item">
+                            <button id="pippete_sc">c</button>
+                            <span>Choose color</span>  
+                        </div>
+                        <div class="shortcuts--settings--item">
+                            <button id="pencil_sc">p</button>
+                            <span>Pencil</span> 
+                        </div>
+                        <div class="shortcuts--settings--item">
+                            <button id="stroke_sc">Shift</button>
+                            <span>Stroke</span> 
+                        </div>
+                    </div>
+                    <div class="shortcuts--settings-right">
+                        <div class="shortcuts--settings--item">
+                            <button id="eraser_sc">e</button>
+                            <span>Eraser</span> 
+                        </div>
+                        <div class="shortcuts--settings--item">
+                            <button id="clear_canvas_sc">Backspace</button>
+                            <span>Clear canvas</span> 
+                        </div>
+                        <div class="shortcuts--settings--item">
+                            <button id="fullscreen_sc">Enter</button>
+                            <span>Fullscreen</span> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

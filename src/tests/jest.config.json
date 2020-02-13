@@ -1,0 +1,15 @@
+{
+    "jest": {
+        "name": "piskel-clone",
+        "jest": {
+            "verbose": true
+        },
+        "setupFiles": [
+            "./__mocks__/client.js"
+        ],
+        "setupTestFrameworkScriptFile": "./__mocks__/client.js",
+        "setupFilesAfterEnv": [
+            "./test/setup.js"
+        ]
+    }
+}
